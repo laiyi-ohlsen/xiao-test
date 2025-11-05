@@ -179,7 +179,7 @@
 
             {/* allow dropped image to be moved inside the container*/}
             <img
-              src={`/images/${item.img}`}
+              src={`${item.img}`}
               alt=""
               className="dropped-image"
               draggable 
