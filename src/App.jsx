@@ -1,11 +1,15 @@
   
-  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
   
   //Importing the styles css 
   import "./App.css";
 
   //Importing the useState function from react so that everything in react response
   import { useState } from "react";
+
+    const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+    console.log(base)
 
   //Define all the food categories as a constant object. 
   //Each category has an array of objects representing individual images and their names.
@@ -136,7 +140,7 @@
 
                   {/* Allows the images to be dragged, the dragged img file is updated into the onDragStart dragging state */}
                   <img
-                    src={`/images/${imgFile}`} 
+                    src={`${imgFile}`} 
                     alt={name} 
                     draggable 
                     onDragStart={() => handleDragStart(imgFile)} 
