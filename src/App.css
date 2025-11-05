@@ -1,0 +1,164 @@
+
+/*main css for all the parts, root is the main one*/
+body, html, #root {
+  margin: 0; 
+  padding: 0; 
+  height: 100%; 
+  width: 100%; 
+  font-family: 'Comic Sans MS', cursive, sans-serif; 
+  background-color: #fff9c4; 
+  color: #222121; 
+}
+
+
+.app {
+  height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  padding: 10px; 
+  gap: 10px; 
+}
+
+
+/* Top Container of all provided imgs*/
+/* spaces out evenly the img, in horizontal and place everythin in the top*/
+.Menu {
+  flex: 1; 
+  display: flex; 
+  justify-content: space-around; 
+  align-items: flex-start; 
+  padding: 10px; 
+  gap: 20px; 
+  overflow-x: auto; 
+}
+
+
+/* each type fo food and its own container, spacing and styles */
+.category {
+  text-align: center; 
+  background-color: #fff8b0; 
+  padding: 10px; 
+  border-radius: 20px; 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); 
+
+  /* Prevent shrinking when container is smaller */
+  flex-shrink: 0;
+}
+
+
+
+.category h3 {
+  margin: 0 0 8px;
+  font: bold 18px inherit; 
+}
+
+
+
+/* CSS Grid container for images inside each category */
+.category-images {
+  display: grid; 
+  /* Two images per row */
+  grid-template-columns: repeat(2, 100px); 
+  gap: 12px; 
+  justify-content: center; 
+}
+
+/* Flex container for labels */
+.labels {
+  display: flex; 
+  justify-content: space-around; 
+  padding: 10px 0; 
+  font: bold 18px inherit;
+  color: #444; 
+}
+
+/* Individual imgs to fit the size and styles */
+.category-images img {
+  width: 100px;
+  height: 100px; 
+  object-fit: cover; 
+  border-radius: 16px; 
+  cursor: grab; 
+  /* Smooth animation on interaction */
+  transition: transform 0.2s; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* pop when clicking or dragging imga */
+.category-images img:active {
+  transform: scale(1.05); 
+}
+
+
+
+/*image + name caption */
+.image-with-name {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+/* Img name caption */
+.image-name {
+  margin-top: 4px; 
+  font: bold 14px inherit;
+  color: #555; 
+}
+
+
+
+/* Bottom half container where images are dropped */
+.FavBoard {
+  flex: 1; 
+  position: relative; 
+  background-color: #fff4a0; 
+  border-radius: 20px; 
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.05); 
+  /* Hide anything going outside FavBoard */
+  overflow: hidden; 
+}
+
+/* each dropped image + heart button, allow free drog position in this container */
+.dropped-wrapper {
+  position: absolute; 
+}
+
+/* Dropped imgs*/
+.dropped-image {
+  width: 100px; 
+  height: 100px;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: grab; 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+  transition: transform 0.2s;
+}
+
+/* dropped img pop */
+.dropped-image:active {
+  transform: scale(1.05);
+}
+
+
+/* like button styling to the right top corner, visible enough and above the image */
+.heart-btn {
+  position: absolute;
+  top: 5px; 
+  right: 5px; 
+  background: white;
+  border: 2px solid darkred;
+  border-radius: 50%; 
+  font-size: 16px; 
+  color: darkred; 
+  cursor: pointer; 
+  width: 24px; 
+  height: 24px; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  padding: 0; 
+  line-height: 1; 
+  z-index: 10; 
+}
+
+
